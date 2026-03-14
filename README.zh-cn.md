@@ -151,6 +151,13 @@ RSS_BEAUTIFY=true
    - 修改完环境变量后需要重新部署
    - Telegram 会屏蔽一些敏感频道的公开展示， 可以通过访问 `https://t.me/s/频道用户名` 确认
 
+2. 为什么 Vercel 部署之前一直正常，忽然失效了？
+   - Vercel 已停止支持 Node.js 18.x 运行时，使用 `nodejs18.x` 的部署会报错失败。
+   - **推荐解决方法：** 将你的 GitHub Fork 与上游最新代码同步，然后重新触发 Vercel 部署：
+     1. 打开你的 GitHub Fork 页面 → 点击 **Sync fork** → **Update branch**
+     2. Vercel 会自动使用更新后的代码重新部署
+   - **备用解决方法：** 在 Vercel 控制台进入项目 → **Settings** → **General** → **Node.js Version**，将版本改为 **20.x** 或 **22.x**，然后重新部署。
+
 ## ☕ 赞助
 
 1. [在 Telegram 关注我](https://t.me/miantiao_me)
