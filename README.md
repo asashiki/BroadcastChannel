@@ -153,6 +153,13 @@ RSS_BEAUTIFY=true
    - Redeploy after modifying environment variables
    - Telegram blocks public display of some sensitive channels, you can verify by visiting `https://t.me/s/channelusername`.
 
+2. Why did my Vercel deployment suddenly stop working?
+   - Vercel has deprecated Node.js 18.x as a supported runtime. Deployments using `nodejs18.x` will now fail.
+   - **Recommended fix:** Sync your GitHub fork with the latest upstream code, then trigger a new Vercel deployment:
+     1. Go to your GitHub fork → click **Sync fork** → **Update branch**
+     2. Vercel will automatically redeploy with the updated code
+   - **Alternative fix:** In the Vercel dashboard, go to your project → **Settings** → **General** → **Node.js Version**, and change it to **20.x** or **22.x**, then redeploy.
+
 ## ☕ Sponsor
 
 1. [Follow me on Telegram](https://t.me/miantiao_me)
